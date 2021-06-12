@@ -1,0 +1,12 @@
+<button mat-button mat-dialog-close class="modal--btn-cerrar" [mat-dialog-close]="false" type="button">
+    <i class="far fa-times-circle f-size-close-dialog"></i>
+</button>
+
+<section class="container text-center">
+    <p class="mt-2" [innerHTML]="data.texto"></p>
+
+    <mat-dialog-actions class="mt-2 mb-2 display-flex-center" *ngIf="data.esConfirmacion === true">
+        <button mat-raised-button type="button" class="color-btn-black btn-radius mt-1" color="warn" [mat-dialog-close]="true" cdkFocusInitial>Si</button>
+        <button mat-raised-button type="button" class="color-btn-black btn-radius" [mat-dialog-close]="false">No</button>
+    </mat-dialog-actions>
+</section>

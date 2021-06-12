@@ -1,0 +1,32 @@
+<section class="pt-5">
+    <div class="text-align-btn-regresar">
+        <button mat-raised-button type="button" color="warn" class="btn-radius" routerLink="/inicio">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+    <form class="display-flex-center mt-3" [formGroup]="usuariosForm" (ngSubmit)="busqueda()">
+        <mat-card class="w-100 example-card card-radius-2em">
+            <mat-card-header>
+              <mat-card-title>Parametros de busqueda</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions class="aling-center">
+                <button mat-raised-button type="submit" class="color-btn-black btn-radius">Consultar</button>
+                <button mat-raised-button type="button" color="warn" class="btn-radius" (click)="limpiarBusqueda()">Limpiar</button>
+              </mat-card-actions>
+            <mat-card-content class="p-left-1rem">
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <mat-form-field class="w-100">
+                            <mat-label for="nombre"> Nombre </mat-label>
+                            <input type="text" name="nombre" matInput placeholder="Nombre" formControlName="nombre">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+          </mat-card>
+    </form>
+    
+    <div class="pt-5">
+        <router-outlet></router-outlet>
+    </div>
+</section>

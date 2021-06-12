@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #303030;
+}
+
+.h-w-outlet {
+    height: 90%;
+    width: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.ml-1rem {
+    margin-left: 1rem;
+}
+
+.f-size-close-dialog {
+    font-size: 1.5rem;
+}
+
+.w-span-toolbar {
+    width: 100%;
+    text-align: center;
+}
+
+.mat-checkbox-disabled .mat-checkbox-label {
+    color: rgb(255 255 255);
+}
+
+.color-btn-black {
+    background-color: #000;
+}
+
+.mat-raised-button.btn-radius {
+    border-radius: 2em;
+}
+
+.h-3rem {
+    height: 3rem;
+}
+
+.mat-card.card-radius-2em {
+    border-radius: 2em;
+}
+
+.display-flex-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+.mat-card-actions.aling-left {
+    text-align: initial;
+    margin-left: .1rem;
+}
+
+.mat-card-actions.aling-center {
+    text-align: center;
+}
+
+button.modal--btn-cerrar {
+    position: absolute;
+    top: -3em;
+    right: .5em;
+    padding: 0;
+    border-radius: 50%;
+    min-width: auto;
+    line-height: 1;
+}
+
+mat-dialog-container.mat-dialog-container {
+    position: relative;
+    overflow: visible;
+    border-radius: 1.5em;
+    padding: 1em 4em;
+    background-color: #c2185b;
+}
+
+.mat-elevation-z8 {
+    overflow-x: auto;
+}

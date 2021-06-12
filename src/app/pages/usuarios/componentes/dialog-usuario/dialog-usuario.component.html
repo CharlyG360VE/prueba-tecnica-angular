@@ -1,0 +1,44 @@
+<button mat-button mat-dialog-close class="modal--btn-cerrar" [mat-dialog-close]="null" type="button">
+    <i class="far fa-times-circle f-size-close-dialog"></i>
+</button>
+
+<section class="container" *ngIf="listaRoles.length > 0">
+    <h2 class="text-center"> {{ data.esEditar === false ? 'Crear' : 'Editar' }} usuario </h2>
+    <form [formGroup]="usuarioForm" (ngSubmit)="crearUsuario()" class="mt-2">
+        <div class="form-group row">
+            <div class="col-md-12">
+                <mat-form-field class="w-100">
+                    <mat-label for="nombre"> Nombre </mat-label>
+                    <input type="text" name="nombre" matInput placeholder="Nombre" formControlName="nombre">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-12">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Rol</mat-label>
+                    <mat-select formControlName="rol" name="food">
+                      <mat-option *ngFor="let rol of listaRoles" [value]="rol.codigo">
+                        {{ rol.nombre | titlecase }}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-12">
+                <mat-label for="activo"> Activo </mat-label>
+                <mat-radio-group aria-label="Activo" formControlName="activo">
+                    <mat-radio-button [value]="true" class="ml-1rem">Si</mat-radio-button>
+                    <mat-radio-button [value]="false" class="ml-1rem">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        
+        <div class="w-100 display-flex-center mt-2">
+            <button mat-raised-button type="submit" class="color-btn-black btn-radius text-center"> {{ data.esEditar === false ? 'Crear' : 'Editar' }} usuario </button>
+        </div>
+    </form>
+</section>

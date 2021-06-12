@@ -1,0 +1,31 @@
+.example-card {
+  max-width: 70%;
+  background-color: #c2185b;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.p-left-1rem {
+  padding-left: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+.flex-gestion-btn {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: .3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .example-card {
+    max-width: 90%;
+  }
+}

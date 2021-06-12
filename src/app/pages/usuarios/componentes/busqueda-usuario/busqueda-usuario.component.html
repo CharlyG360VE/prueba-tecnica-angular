@@ -1,0 +1,62 @@
+<section class="display-flex-center">
+    <mat-card class="example-card card-radius-2em w-100">
+        <mat-card-header>
+          <mat-card-title>Lista de usuarios</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" class="color-btn-black btn-radius" (click)="crearUsuario( false )">Crear</button>
+          </mat-card-actions>
+        <mat-card-content class="p-left-1rem">
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource">
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef class="text-center"> ID </th>
+                    <td mat-cell *matCellDef="let registro"> {{ registro.id === 0 ? '---' : registro.id }} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="rol">
+                    <th mat-header-cell *matHeaderCellDef class="text-center"> Rol </th>
+                    <td mat-cell *matCellDef="let registro"> {{ registro.rol === 0 ? '---' : ( checkRoles( registro.rol ) | titlecase ) }} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre </th>
+                    <td mat-cell *matCellDef="let registro"> {{ registro.nombre }} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="estado">
+                    <th mat-header-cell *matHeaderCellDef class="text-center"> Estado del usuario </th>
+                    <td mat-cell *matCellDef="let registro">
+                        <ng-container *ngIf="registro.gestion === true; else sinGestion">
+                            {{ registro.activo === true ? 'Activo' : 'Inactivo' }}
+                        </ng-container>
+                        <ng-template #sinGestion>
+                            ---
+                        </ng-template>
+                        
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="gestion">
+                    <th mat-header-cell *matHeaderCellDef class="text-center"> Gestion </th>
+                    <td mat-cell *matCellDef="let registro">
+                        <ng-container *ngIf="registro.gestion === true; else sinGestion">
+                          <div class="flex-gestion-btn">
+                            <button mat-raised-button type="button" class="color-btn-black btn-radius" (click)="crearUsuario( true, registro )">Editar</button>
+                            <button mat-raised-button type="button" class="color-btn-black btn-radius mt-1" color="warn" (click)="eliminarUsuario( registro.id )">Eliminar</button>
+                          </div>
+                        </ng-container>
+                        <ng-template #sinGestion>
+                            ---
+                        </ng-template>
+                        
+                    </td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+              </div>
+        </mat-card-content>
+    </mat-card>
+</section>

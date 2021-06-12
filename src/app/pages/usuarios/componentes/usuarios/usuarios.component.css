@@ -1,0 +1,22 @@
+.example-card {
+  max-width: 55%;
+  background-color: #c2185b;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.p-left-1rem {
+  padding-left: 1rem;
+}
+
+.text-align-btn-regresar {
+  text-align: right !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .example-card {
+    max-width: 70%;
+  }
+}
